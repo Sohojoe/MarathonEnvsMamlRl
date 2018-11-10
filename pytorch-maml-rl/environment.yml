@@ -1,0 +1,14 @@
+name: pytorch-maml
+channels:
+    - https://conda.anaconda.org/kne 
+    - https://conda.binstar.org/tlatorre 
+    - https://conda.anaconda.org/cjs14
+    - https://conda.anaconda.org/menpo
+    - jjhelmus
+dependencies:
+    - python==3.6.6
+    - numpy
+    - pip:
+      - torch>=0.4.0
+      - gym>=0.10.5
+      - tensorboardX>=1.2    

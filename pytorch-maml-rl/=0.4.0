@@ -1,0 +1,4 @@
+Collecting torch
+  Downloading https://files.pythonhosted.org/packages/59/cf/404677f62d18609b3d8b4fdcd62c98981e1a6bd2d086ece3f84c880623a3/torch-0.4.1-cp36-cp36m-macosx_10_7_x86_64.whl (11.5MB)
+Installing collected packages: torch
+Successfully installed torch-0.4.1
