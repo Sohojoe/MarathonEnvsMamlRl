@@ -28,12 +28,12 @@ setup(
     packages=find_packages(exclude=['tests', 'tests.*', '*.tests', '*.tests.*']),  # Required
 
     install_requires=[
-        'tensorflow>=1.7,<1.8',
+        # 'tensorflow>=1.7,<1.8',
         'Pillow>=4.2.1',
-        'matplotlib',
-        'numpy>=1.13.3,<=1.14.5',
-        'jupyter',
-        'pytest>=3.2.2',
+        # 'matplotlib',
+        # 'numpy>=1.13.3,<=1.14.5',
+        # 'jupyter',
+        # 'pytest>=3.2.2',
         'docopt',
         'pyyaml',
         'protobuf>=3.6,<3.7',

@@ -7,7 +7,8 @@ import json
 from maml_rl.metalearner import MetaLearner
 from maml_rl.policies import CategoricalMLPPolicy, NormalMLPPolicy
 from maml_rl.baseline import LinearFeatureBaseline
-from maml_rl.sampler import BatchSampler
+# from maml_rl.sampler import BatchSampler
+from maml_rl.unity_sampler import UnityBatchSampler
 
 from tensorboardX import SummaryWriter
 
@@ -19,7 +20,9 @@ def total_rewards(episodes_rewards, aggregation=torch.mean):
 def main(args):
     continuous_actions = (args.env_name in ['AntVel-v1', 'AntDir-v1',
         'AntPos-v0', 'HalfCheetahVel-v1', 'HalfCheetahDir-v1',
-        '2DNavigation-v0'])
+        '2DNavigation-v0',
+        'MarathonAntVel-v0', 'MatahonAntDir-v0', 'MatahonAntPos-v0',
+        ])
 
     writer = SummaryWriter('./logs/{0}'.format(args.output_folder))
     save_folder = './saves/{0}'.format(args.output_folder)
@@ -30,7 +33,7 @@ def main(args):
         config.update(device=args.device.type)
         json.dump(config, f, indent=2)
 
-    sampler = BatchSampler(args.env_name, batch_size=args.fast_batch_size,
+    sampler = UnityBatchSampler(args.env_name, batch_size=args.fast_batch_size,
         num_workers=args.num_workers)
     if continuous_actions:
         policy = NormalMLPPolicy(

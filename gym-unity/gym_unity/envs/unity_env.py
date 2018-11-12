@@ -37,6 +37,7 @@ class UnityEnv(gym.Env):
         self._current_state = None
         self._n_agents = None
         self._multiagent = multiagent
+        self._spec = None
 
         # Check brain configuration
         if len(self._env.brains) != 1:
@@ -206,7 +207,10 @@ class UnityEnv(gym.Env):
 
     @property
     def spec(self):
-        return None
+        return self._spec
+    @spec.setter
+    def spec(self, new_spec):
+        self._spec = new_spec
 
     @property
     def action_space(self):

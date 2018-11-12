@@ -20,6 +20,24 @@ register(
     max_episode_steps=10
 )
 
+# Marathon
+# ----------------------------------------
+
+register(
+    'MarathonAntVel-v0',
+    entry_point='maml_rl.envs.utils:marathon_wrapper',
+    kwargs={'entry_point': 'maml_rl.envs.unity.marathon:AntVelEnv'}
+    # ,max_episode_steps=200
+)
+
+# register(
+#     'MatahonAntDir-v0',
+#     entry_point='maml_rl.envs.utils:marathon_wrapper',
+#     kwargs={'entry_point': 'maml_rl.envs.unity.marathon:AntDirEnv'},
+#     max_episode_steps=200
+# )
+
+
 # Mujoco
 # ----------------------------------------
 
